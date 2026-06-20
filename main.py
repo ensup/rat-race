@@ -55,7 +55,6 @@ class Rat:
 
 class Maze:
     """ A 2D maze. """
-
     # Write your Maze methods here.
     def __init__(self, maze, rat_1, rat_2):
         self.maze = maze
@@ -74,6 +73,12 @@ class Maze:
             if self.maze[row][col] == '#':
                 return True
 
-r=Rat(RAT_1_CHAR, 4,3)
-r.eat_sprout()
-print(r)
+    def get_character(self, row, col):
+        if self.is_wall(row,col):
+            return WALL
+        elif row == self.rat_1.row and col == self.rat_1.col:
+            return self.rat_1.symbol
+        elif row == self.rat_2.row and col == self.rat_2.col:
+            return self.rat_2.symbol
+        else:
+            return self.maze[row][col]
