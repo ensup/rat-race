@@ -41,10 +41,16 @@ class Rat:
         self.col = col
         self.row = row
         self.num_sprouts_eaten = 0
+        
     def eat_sprout(self):
         self.num_sprouts_eaten += 1
+
     def __str__(self):
         return str(self.symbol)+" at ("+str(self.col)+", "+str(self.row)+") ate "+str(self.num_sprouts_eaten)+" sprouts."
+    
+    def set_location(self, row, col):
+        self.row = row
+        self.col = col
 
 
 class Maze:
