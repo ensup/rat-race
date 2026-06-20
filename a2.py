@@ -80,8 +80,8 @@ class Maze:
             if self.maze[new_row][new_col] == SPROUT:
                 rat.num_sprouts_eaten += 1
                 self.num_sprouts_left -= 1
-                self.maze[new_row, new_col] = HALL
-            rat.set_location(new_row, new_row)
+                self.maze[new_row][new_col] = HALL
+            rat.set_location(new_row, new_col)
             return True
 
     def get_character(self, row, col):
@@ -93,7 +93,6 @@ class Maze:
             return self.rat_2.symbol
         else:
             return self.maze[row][col]
-    
 
     def __str__(self):
         row_str_list = []
