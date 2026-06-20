@@ -71,7 +71,9 @@ class Maze:
     def is_wall(self, row, col):
         if row < 0 or col < 0:
             return True
-        if row >= len(self.maze) or col >= len(self.maze[row]):
+        if row >= len(self.maze):
+            return True
+        if col >= len(self.maze[row]):
             return True
         return self.maze[row][col] == WALL
     
