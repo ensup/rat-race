@@ -35,7 +35,7 @@ RAT_2_CHAR = 'P'
 class Rat:
     """ A rat caught in a maze. """
     # Write your Rat methods here.
-    #column == 세로, row == 가로
+    #column == 세로줄, row == 가로줄
     def __init__(self, symbol, row, col):
         self.symbol = symbol
         self.col = col
