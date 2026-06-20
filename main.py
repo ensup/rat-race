@@ -41,6 +41,8 @@ class Rat:
         self.col = col
         self.row = row
         self.num_sprouts_eaten = 0
+    def eat(self):
+        self.num_sprouts_eaten += 1
 
 
 class Maze:
