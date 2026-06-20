@@ -41,7 +41,7 @@ class Rat:
         self.col = col
         self.row = row
         self.num_sprouts_eaten = 0
-    def eat(self):
+    def eat_sprout(self):
         self.num_sprouts_eaten += 1
 
 
