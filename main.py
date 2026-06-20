@@ -43,9 +43,15 @@ class Rat:
         self.num_sprouts_eaten = 0
     def eat_sprout(self):
         self.num_sprouts_eaten += 1
+    def __str__(self):
+        return str(self.symbol)+" at ("+str(self.col)+", "+str(self.row)+") ate "+str(self.num_sprouts_eaten)+" sprouts."
 
 
 class Maze:
     """ A 2D maze. """
 
     # Write your Maze methods here.
+
+r=Rat(RAT_1_CHAR, 4,3)
+r.eat_sprout()
+print(r)
