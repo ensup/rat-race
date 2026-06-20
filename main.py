@@ -57,6 +57,17 @@ class Maze:
     """ A 2D maze. """
 
     # Write your Maze methods here.
+    def __init__(self, maze, rat_1, rat_2):
+        self.maze = maze
+        self.rat_1 = rat_1
+        self.rat_2 = rat_2
+        self.num_sprouts_left = self.count_sprouts()
+
+    def count_sprouts(self):
+        num = 0
+        for l in self.maze:
+            num += l.count(SPROUT)
+        return num
 
 r=Rat(RAT_1_CHAR, 4,3)
 r.eat_sprout()
