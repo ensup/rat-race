@@ -68,6 +68,11 @@ class Maze:
         for l in self.maze:
             num += l.count(SPROUT)
         return num
+    
+    def is_wall(self, row, col):
+        if len(self.maze)-1 > row and len(self.maze[row])-1 > col:
+            if self.maze[row][col] == '#':
+                return True
 
 r=Rat(RAT_1_CHAR, 4,3)
 r.eat_sprout()
