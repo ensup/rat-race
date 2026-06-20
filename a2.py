@@ -84,7 +84,6 @@ class Maze:
             rat.set_location(new_row, new_row)
             return True
 
-
     def get_character(self, row, col):
         if self.is_wall(row,col):
             return WALL
@@ -94,3 +93,14 @@ class Maze:
             return self.rat_2.symbol
         else:
             return self.maze[row][col]
+    
+
+    def __str__(self):
+        row_str_list = []
+        for row in self.maze: #Make a sting for each rows
+            row_str_list.append(''.join(row))
+        maze_str = '\n'.join(row_str_list) # Combine each row into a single maze string
+        rat1_str = str(self.rat_1)
+        rat2_str = str(self.rat_2)
+        result = maze_str + '\n' + rat1_str + '\n' + rat2_str
+        return result
