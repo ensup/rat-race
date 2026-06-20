@@ -96,8 +96,11 @@ class Maze:
 
     def __str__(self):
         row_str_list = []
-        for row in self.maze: #Make a sting for each rows
-            row_str_list.append(''.join(row))
+        for row in range(len(self.maze)): #Make a sting for each rows
+            row_list = []
+            for col in range(len(self.maze[0])):
+                row_list.append(self.get_character(row, col))
+            row_str_list.append(''.join(row_list))
         maze_str = '\n'.join(row_str_list) # Combine each row into a single maze string
         rat1_str = str(self.rat_1)
         rat2_str = str(self.rat_2)
