@@ -72,6 +72,18 @@ class Maze:
         if len(self.maze) > row and len(self.maze[row]) > col:
             if self.maze[row][col] == '#':
                 return True
+    
+    def move(self, rat, up_down, right_left):
+        new_row = rat.row + up_down
+        new_col = rat.col + right_left
+        if not self.is_wall(new_row, new_col):
+            if self.maze[new_row, new_col] == SPROUT:
+                rat.num_sprouts_eaten += 1
+                self.num_sprouts_left -= 1
+                self.maze[new_row, new_col] = HALL
+            rat.set_location(new_row, new_row)
+            return True
+
 
     def get_character(self, row, col):
         if self.is_wall(row,col):
