@@ -1,3 +1,4 @@
+# Made by Ensup Choi <https://github.com/ensup>
 # Do not import any modules. If you do, the tester may reject your submission.
 
 # Constants for the contents of the maze.
